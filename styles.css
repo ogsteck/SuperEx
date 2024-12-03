@@ -1,70 +1,67 @@
 body {
-    font-family: 'Helvetica', sans-serif; /* Helvetica for body text */
-    background-color: #f5f5dc; /* Beige background */
-    color: #000000; /* Black text */
+    background-color: beige;
+    font-family: Helvetica, sans-serif;
+    color: black;
     margin: 0;
-    padding: 0;
-    font-weight: bold; /* Bold text for the body */
-}
-
-.container {
-    width: 50%;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
 }
 
-h1, h2 {
-    font-family: 'Garamond', serif; /* Garamond for headings */
-}
-
 h1 {
-    color: #000000; /* Black main heading */
+    font-family: Garamond, serif;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 1.5em;
-    color: #000000; /* Black subtitle */
-    margin-top: 10px;
+    font-family: Garamond, serif;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold; /* Bold labels */
+h3 {
+    font-size: 24px;
+    margin-top: 30px;
 }
 
 input {
-    width: 60%;
+    font-size: 16px;
     padding: 10px;
-    margin: 5px 0 20px;
+    margin: 5px;
+    width: 200px; /* Adjust input width */
     border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Placeholder text color (dark red) */
-input::placeholder {
-    color: #8B0000; /* Dark red placeholder text */
+    border-radius: 5px;
 }
 
 button {
-    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
+    padding: 10px 20px;
+    font-size: 18px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-p {
-    font-size: 1.2em;
-    color: #333;
+#consoleOutput {
+    margin-top: 30px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: inline-block;
 }
