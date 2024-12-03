@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperEx: Big Number Turing Machine</title>
+    <title> SuperEx: The Big Number Machine</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Binary Tetration Calculator</h1>
-        <h2>Calculate Created by Owen Steck</h2> 
+    <h1>SuperEx</h1>
+    <h2> The Big Number Machine by Owen Steck :</h2>
 
-        <label for="base">Enter the base:</label>
-        <input type="text" id="base" placeholder="binary only; e.g. 10 for 2">
-        
-        <label for="height">Enter the height:</label>
-        <input type="text" id="height" placeholder="binary only; e.g. 11 for 3">
+    <label for="binInput1">Enter Binary Base:</label>
+    <input type="text" id="binInput1" placeholder="Enter binary number">
 
-        <button onclick="calculateTetration()">Calculate Tetration</button>
+    <label for="binInput2">Enter Binary Height:</label>
+    <input type="text" id="binInput2" placeholder="Enter binary number">
 
-        <p id="result"></p>
-    </div>
+    <button onclick="submitForm()">Calculate</button>
+
+    <h3>Step-by-step Output:</h3>
+    <div id="consoleOutput"></div>
 
     <script src="script.js"></script>
 </body>
