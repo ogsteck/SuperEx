@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Tetration Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Binary Tetration Calculator</h2>
+        <label for="binary1">Binary Input 1:</label>
+        <input type="text" id="binary1" placeholder="Enter binary number">
+        
+        <label for="binary2">Binary Input 2:</label>
+        <input type="text" id="binary2" placeholder="Enter binary number">
+        
+        <button onclick="calculateTetration()">Calculate Tetration</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateTetration() {
+            // Get the binary input values
+            let bin1 = document.getElementById('binary1').value;
+            let bin2 = document.getElementById('binary2').value;
+
+            // Validate inputs to make sure they are binary
+            if (!/^[01]+$/.test(bin1) || !/^[01]+$/.test(bin2)) {
+                alert("Please enter valid binary numbers.");
+                return;
+            }
+
+            // Convert binary to decimal
+            let num1 = parseInt(bin1, 2);
+            let num2 = parseInt(bin2, 2);
+
+            // Calculate tetration (num1 tetrated num2 times)
+            let result = tetration(num1, num2);
+
+            // Output the result
+            document.getElementById('result').innerHTML = `Result: ${result}`;
+        }
+
+        // Function to calculate tetration: num1 ^ (num1 ^ (num1 ^ ... num2 times))
+        function tetration(base, height) {
+            if (height <= 1) return base;
+            let result = base;
+            for (let i = 1; i < height; i++) {
+                result = Math.pow(base, result);
+                // To avoid overflow issues, break if result becomes too large
+                if (result > Number.MAX_SAFE_INTEGER) {
+                    return "Result too large!";
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
